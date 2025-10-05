@@ -18,7 +18,8 @@ export default function EventRegister() {
     };
 
     try {
-      const apiUrl = 'http://localhost:5000/api/event/register';
+      const apiUrl = import.meta.env.PROD ? 'https://nextgen-backend-889y.onrender.com/api/event/register' : 'http://localhost:5000/api/event/register';
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

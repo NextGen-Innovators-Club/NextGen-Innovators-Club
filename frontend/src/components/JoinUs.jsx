@@ -28,16 +28,19 @@ const JoinUs = () => {
   e.preventDefault();
   setIsSubmitting(true);
 
+  const apiUrl = import.meta.env.PROD ? "https://nextgen-backend-889y.onrender.com/api/users" : "http://localhost:5000/api/users";
+
   try {
-    const response = await fetch("http://localhost:5000/api/users", {
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
     const data = await response.json();
+
     if (response.ok) {
-      alert(data.message);
+      alert(data.message || "Form submitted successfully!");
       setFormData({
         name: '',
         email: '',
@@ -46,15 +49,16 @@ const JoinUs = () => {
         motivation: ''
       });
     } else {
-      alert(data.error || "Something went wrong");
+      alert(data.error || "Something went wrong. Please check your inputs.");
     }
   } catch (err) {
-    console.error(err);
+    console.error("Fetch error:", err);
     alert("Server error. Please try again later.");
+  } finally {
+    setIsSubmitting(false);
   }
-
-  setIsSubmitting(false);
 };
+
 
 
   // Enhanced animation variants

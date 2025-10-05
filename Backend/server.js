@@ -2,9 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(cors());
 app.use(express.json());
 const mongoose = require('mongoose');
+
+app.use(cors({
+  origin: ["https://your-frontend-domain.onrender.com", "http://localhost:5173"],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 
 const userRoutes = require('./routes/userRoutes');
 const eventRoutes = require('./routes/eventRoutes');
