@@ -6,7 +6,7 @@ app.use(express.json());
 const mongoose = require('mongoose');
 
 app.use(cors({
-  origin: ["https://your-frontend-domain.onrender.com", "http://localhost:5173"],
+  origin: ["https://nextgen-innovators-club.github.io", "http://localhost:5173"],
   methods: ["GET", "POST"],
   credentials: true
 }));
