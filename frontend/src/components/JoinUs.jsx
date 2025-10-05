@@ -25,16 +25,37 @@ const JoinUs = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      // Handle success state here
-    }, 2000);
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("http://localhost:5000/api/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert(data.message);
+      setFormData({
+        name: '',
+        email: '',
+        year: '',
+        interest: '',
+        motivation: ''
+      });
+    } else {
+      alert(data.error || "Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Server error. Please try again later.");
+  }
+
+  setIsSubmitting(false);
+};
+
 
   // Enhanced animation variants
   const textVariant = {
@@ -307,7 +328,7 @@ const JoinUs = () => {
                           onBlur={() => setFocusedField('')}
                           required
                           className="w-full p-4 rounded-xl bg-light-primary dark:bg-dark-primary text-text-light-primary dark:text-text-dark-primary border-2 border-light-accent dark:border-dark-accent focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-300"
-                          placeholder="your.email@pccoe.edu"
+                          placeholder="your.email@pcu.edu.in"
                         />
                         <motion.div
                           initial={{ scaleX: 0 }}

@@ -1,10 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
-import SectionWrapper from './SectionWrapper';
+import EventRegister from './sections/EventRegister.jsx';
 
 const Events = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
+  const [showRegistration, setShowRegistration] = useState(false);
+
+  const handleRegisterClick = () => {
+    // Scroll to the events section smoothly
+    const eventsSection = document.getElementById('events');
+    if (eventsSection) {
+      eventsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setShowRegistration(true);
+  };
+
+  const handleBackToEvents = () => {
+    setShowRegistration(false);
+  };
+
+  // If registration form is shown, display it
+  if (showRegistration) {
+    return (
+      <section className="py-20 bg-light-primary dark:bg-dark-primary">
+        <div className="container mx-auto px-6">
+          <div className="max-w-md mx-auto">
+            <button 
+              onClick={handleBackToEvents}
+              className="mb-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition"
+            >
+              ← Back to Events
+            </button>
+            <EventRegister />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   // Enhanced animation variants with scroll triggers
   const textVariant = {
@@ -35,6 +72,7 @@ const Events = () => {
 
   return (
     <section 
+      id="events"
       ref={ref}
       className="py-20 bg-light-primary dark:bg-dark-primary relative overflow-hidden"
     >
@@ -293,6 +331,7 @@ const Events = () => {
                       boxShadow: "0 20px 40px rgba(6, 182, 212, 0.3)"
                     }}
                     whileTap={{ scale: 0.98, y: 0 }}
+                    onClick={handleRegisterClick}
                     className="bg-accent hover:bg-accent-hover dark:bg-accent dark:hover:bg-accent-light text-white font-semibold py-3 px-8 rounded-xl shadow-soft dark:shadow-glow transition-all duration-300 relative overflow-hidden group"
                   >
                     <motion.span
@@ -329,12 +368,13 @@ const Events = () => {
             className="text-text-light-secondary dark:text-text-dark-secondary"
           >
             Questions?{' '}
-            <motion.span 
+            <motion.a 
               whileHover={{ x: 3, scale: 1.05 }}
-              className="text-accent dark:text-accent-light font-semibold cursor-pointer"
+              href="mailto:nextgen@pcu.edu.in"
+              className="text-accent dark:text-accent-light font-semibold cursor-pointer hover:text-accent-hover transition-colors duration-300"
             >
               Contact us
-            </motion.span>
+            </motion.a>
           </motion.p>
         </motion.div>
       </div>
@@ -342,4 +382,4 @@ const Events = () => {
   );
 };
 
-export default SectionWrapper(Events, 'events');
+export default Events;

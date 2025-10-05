@@ -1,9 +1,7 @@
-// routes/eventRoutes.js
-const express = require('express');
+const express = require('express'); 
 const router = express.Router();
-const eventController = require('../controllers/eventController');
+const { registerStudent } = require('../controllers/eventController');
 
-// POST /api/event/register
-router.post('/register', eventController.register);
+router.post('/register', registerStudent);
 
 module.exports = router;

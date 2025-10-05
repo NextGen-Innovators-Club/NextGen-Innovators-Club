@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') !== 'light');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const nav = useNavigate();
 
   // Handle scroll effect
   useEffect(() => {
@@ -31,12 +33,12 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { id: 'about', title: 'About' },
-    { id: 'projects', title: 'Projects' },
-    { id: 'events', title: 'Events' },
-    { id: 'team', title: 'Team' },
-    { id: 'gallery', title: 'Gallery' },
-    { id: 'join', title: 'Join Us' },
+    { id: 'about', title: 'About', path: '/#about' },
+    { id: 'projects', title: 'Projects', path: '/#projects' },
+    { id: 'events', title: 'Events',  path: '/#events' },
+    { id: 'team', title: 'Team', path: '/team' },
+    { id: 'gallery', title: 'Gallery', path: '/#gallery' },
+    { id: 'join', title: 'Join Us', path: '/#join' },
   ];
 
   return (
@@ -63,14 +65,19 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-1">
               {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={`#${link.id}`}
-                  className="relative group px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
+                <button
+                key={link.id} onClick={() => {
+                  if (link.path.startsWith('/#')) {
+                    const section = document.querySelector(link.path.replace('/#','#'));
+                    if (section) section.scrollIntoView({ behavior: 'smooth' });
+                  }else {
+                    nav(link.path);
+                  }
+                }} className="relative group px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
                 >
                   {link.title}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-full transition-all duration-300"></span>
-                </a>
+                </button>
               ))}
             </div>
           </div>

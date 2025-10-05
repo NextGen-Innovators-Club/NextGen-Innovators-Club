@@ -14,20 +14,18 @@ export default function EventRegister() {
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
-      event: formData.get('event'),
-      message: formData.get('message'),
+      eventName: formData.get('eventName'), 
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/event/register', {
+      const apiUrl = 'http://localhost:5000/api/event/register';
+      const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+
       const result = await response.json();
-      
       if (result.success) {
         setSubmitted(true);
       } else {
@@ -49,7 +47,7 @@ export default function EventRegister() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-green-800 mb-2">Registration Successful! 🎉</h3>
+          <h3 className="text-2xl font-bold text-green-800 mb-2">Registration Successful!</h3>
           <p className="text-green-700">We've received your registration and will contact you soon.</p>
         </div>
       </div>
@@ -69,43 +67,22 @@ export default function EventRegister() {
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
           <input 
-            name="name" 
-            type="text" 
-            placeholder="Enter your full name" 
-            required 
+            name="name" type="text" placeholder="Enter your full name" required
             className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 placeholder-gray-400 bg-white/80 backdrop-blur-sm" 
           />
         </div>
-        
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
           <input 
-            name="email" 
-            type="email" 
-            placeholder="your.email@example.com" 
-            required 
+            name="email" type="email" placeholder="your.email@example.com" required
             className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 placeholder-gray-400 bg-white/80 backdrop-blur-sm" 
           />
         </div>
-        
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700 mb-1">Event Name</label>
           <input 
-            name="event" 
-            type="text" 
-            placeholder="Which event are you interested in?" 
-            required 
+            name="eventName" type="text" placeholder="Enter the event name" required
             className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 placeholder-gray-400 bg-white/80 backdrop-blur-sm" 
-          />
-        </div>
-        
-        <div className="space-y-1">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-          <textarea 
-            name="message" 
-            placeholder="Tell us why you're excited to join this event..." 
-            rows="4"
-            className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 placeholder-gray-400 bg-white/80 backdrop-blur-sm resize-none" 
           />
         </div>
         
@@ -121,8 +98,7 @@ export default function EventRegister() {
         )}
         
         <button 
-          type="submit" 
-          disabled={isLoading} 
+          type="submit" disabled={isLoading} 
           className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
         >
           {isLoading ? (
