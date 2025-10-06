@@ -6,10 +6,8 @@ import Events from '../Events';
 import Team from '../Team';
 import JoinUs from '../JoinUs';
 import Footer from '../Footer';
-import { useNavigate } from "react-router-dom";
 
 function MainPage() {
-  const nav = useNavigate();
   return (
     <div className="bg-light-primary text-text-light-primary dark:bg-dark-primary dark:text-text-dark-primary min-h-screen transition-colors duration-300">
       <Navbar />

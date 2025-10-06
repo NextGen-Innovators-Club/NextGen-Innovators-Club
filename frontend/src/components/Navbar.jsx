@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') !== 'light');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const nav = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Handle scroll effect
   useEffect(() => {
@@ -35,11 +36,41 @@ const Navbar = () => {
   const navLinks = [
     { id: 'about', title: 'About', path: '/#about' },
     { id: 'projects', title: 'Projects', path: '/#projects' },
-    { id: 'events', title: 'Events',  path: '/#events' },
+    { id: 'events', title: 'Events', path: '/#events' },
     { id: 'team', title: 'Team', path: '/team' },
     { id: 'gallery', title: 'Gallery', path: '/#gallery' },
     { id: 'join', title: 'Join Us', path: '/#join' },
   ];
+
+  // Smart navigation handler
+  const handleNavigation = (link) => {
+    setIsOpen(false); // Close mobile menu
+
+    if (link.path.startsWith('/#')) {
+      // Section navigation
+      if (location.pathname !== '/') {
+        // Not on homepage, navigate there first
+        navigate('/');
+        setTimeout(() => {
+          const sectionId = link.path.replace('/#', '');
+          const section = document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // Already on homepage, just scroll
+        const sectionId = link.path.replace('/#', '');
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      // Regular route navigation (like /team)
+      navigate(link.path);
+    }
+  };
 
   return (
     <nav 
@@ -51,14 +82,14 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - NOW CLICKABLE! */}
           <div className="flex-shrink-0">
-            <a 
-              href="#" 
-              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all duration-300"
+            <button 
+              onClick={() => navigate('/')}
+              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all duration-300 cursor-pointer"
             >
               Nextgen Innovation
-            </a>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
@@ -66,14 +97,9 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-1">
               {navLinks.map((link) => (
                 <button
-                key={link.id} onClick={() => {
-                  if (link.path.startsWith('/#')) {
-                    const section = document.querySelector(link.path.replace('/#','#'));
-                    if (section) section.scrollIntoView({ behavior: 'smooth' });
-                  }else {
-                    nav(link.path);
-                  }
-                }} className="relative group px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
+                  key={link.id}
+                  onClick={() => handleNavigation(link)}
+                  className="relative group px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-200"
                 >
                   {link.title}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-full transition-all duration-300"></span>
@@ -119,18 +145,17 @@ const Navbar = () => {
       >
         <div className="px-4 pt-2 pb-4 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg">
           {navLinks.map((link, index) => (
-            <a 
-              key={link.id} 
-              href={`#${link.id}`} 
-              onClick={() => setIsOpen(false)} 
-              className="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-cyan-500 dark:hover:text-cyan-400 transition-all duration-200"
+            <button
+              key={link.id}
+              onClick={() => handleNavigation(link)}
+              className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-cyan-500 dark:hover:text-cyan-400 transition-all duration-200"
               style={{ 
                 animationDelay: `${index * 50}ms`,
                 animation: isOpen ? 'slideIn 0.3s ease-out forwards' : 'none'
               }}
             >
               {link.title}
-            </a>
+            </button>
           ))}
         </div>
       </div>
