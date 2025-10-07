@@ -16,6 +16,10 @@ const JoinUs = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState('');
+   const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [modalType, setModalType] = useState("success"); // 'success' | 'error'
+
 
   const handleChange = (e) => {
     setFormData({
@@ -40,21 +44,26 @@ const JoinUs = () => {
     const data = await response.json();
 
     if (response.ok) {
-      alert(data.message || "Form submitted successfully!");
-      setFormData({
-        name: '',
-        email: '',
-        year: '',
-        interest: '',
-        motivation: ''
-      });
-    } else {
-      alert(data.error || "Something went wrong. Please check your inputs.");
-    }
+        setModalMessage(data.message || "Form submitted successfully!");
+        setModalType("success");
+        setShowModal(true);
+        setFormData({
+          name: '',
+          email: '',
+          year: '',
+          interest: '',
+          motivation: ''
+        });
+      } else {
+        setModalMessage(data.error || "Something went wrong. Please check your inputs.");
+        setModalType("error");
+        setShowModal(true);
+      }
   } catch (err) {
-    console.error("Fetch error:", err);
-    alert("Server error. Please try again later.");
-  } finally {
+      setModalMessage("Server error. Please try again later.");
+      setModalType("error");
+      setShowModal(true);
+    } finally {
     setIsSubmitting(false);
   }
 };
@@ -454,6 +463,44 @@ const JoinUs = () => {
                     </motion.button>
                   </motion.div>
                 </form>
+                {showModal && (
+                  <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+                  >
+                    <motion.div
+                    initial={{ y: 60, scale: 0.96, opacity: 0 }}
+                    animate={{ y: 0, scale: 1, opacity: 1 }}
+                    exit={{ y: 40, scale: 0.96, opacity: 0 }}
+                    transition={{ type: "spring", duration: 0.35 }}
+                    className="w-full max-w-sm bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl px-8 py-10 flex flex-col items-center"
+                    >
+                      {modalType === "success" ? (
+                         <svg className="w-14 h-14 text-green-400 mb-4" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                         </svg>
+                      ) : (
+                        <svg className="w-14 h-14 text-red-400 mb-4" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      )}
+                      <h4 className={`mb-2 text-xl font-semibold ${modalType === "success" ? "text-green-500" : "text-red-500"}`}>
+                        {modalType === "success" ? "Thank You!" : "Something Went Wrong"}
+                      </h4>
+                      <p className="text-base text-gray-700 dark:text-gray-300 mb-6 text-center">{modalMessage}</p>
+                      <button
+                        onClick={() => setShowModal(false)}
+                        className={`px-8 py-2 rounded-lg font-semibold shadow transition
+                          ${modalType === "success" ? "bg-green-500 hover:bg-green-600 text-white" : "bg-red-500 hover:bg-red-600 text-white"}
+                        `}
+                      >
+                        Close
+                      </button>
+                    </motion.div>
+                  </motion.div>
+                )}
                 
                 <motion.div 
                   initial={{ opacity: 0 }}
