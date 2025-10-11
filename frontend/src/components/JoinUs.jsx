@@ -32,8 +32,8 @@ const JoinUs = () => {
   e.preventDefault();
   setIsSubmitting(true);
 
-  const apiUrl = import.meta.env.PROD ? "https://nextgen-backend-889y.onrender.com/api/users" : "http://localhost:5000/api/users";
-
+  //const apiUrl = import.meta.env.PROD ? "https://nextgen-backend-889y.onrender.com/api/users" : "http://localhost:5000/api/users";
+  const apiUrl = 'https://nextgen-backend-889y.onrender.com/api/users';
   try {
     const response = await fetch(apiUrl, {
       method: "POST",
@@ -67,8 +67,6 @@ const JoinUs = () => {
     setIsSubmitting(false);
   }
 };
-
-
 
   // Enhanced animation variants
   const textVariant = {
