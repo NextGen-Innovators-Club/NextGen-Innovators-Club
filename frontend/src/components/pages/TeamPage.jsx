@@ -150,7 +150,7 @@ const TeamPage = () => {
       color: "from-pink-600 to-rose-600",
       leader: { name: "Abhishek Pattir", role: "Media & Publicity Head" },
       members: [
-        { name: "Mudil Gupta", role: "Media & Publicity Team" },
+        { name: "Mudit Gupta", role: "Media & Publicity Team" },
         { name: "Rushikesh Pawar", role: "Media & Publicity Team" },
         { name: "Snehal Jaybhay", role: "Media & Publicity Team" },
         { name: "Manasi Gopale", role: "Media & Publicity Team" },
