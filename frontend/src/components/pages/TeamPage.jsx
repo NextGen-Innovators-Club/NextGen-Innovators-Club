@@ -18,13 +18,13 @@ const TRANSITION_CONFIG = {
 
 const AnimatedStars = () => {
   const stars = useMemo(() => {
-    return Array.from({ length: 120 }, (_, i) => ({
+    return Array.from({ length: 70 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 4 + 1.5, 
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
+      duration: Math.random() * 2 + 1.5,
+      delay: Math.random() * 1.5,
     }));
   }, []);
 
@@ -58,13 +58,13 @@ const AnimatedStars = () => {
 
 const FloatingParticles = () => {
   const particles = useMemo(() => {
-    return Array.from({ length: 30 }, (_, i) => ({
+    return Array.from({ length: 20 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 20 + 15, 
-      duration: Math.random() * 10 + 10,
-      delay: Math.random() * 5,
+      duration: Math.random() * 9 + 5,
+      delay: Math.random() * 2,
     }));
   }, []);
 
@@ -183,7 +183,7 @@ const TeamPage = () => {
 
   return (
     <>
-      {/* ✅ ADD NAVBAR */}
+    
       <Navbar />
       
       <div className="min-h-screen relative overflow-hidden
@@ -359,7 +359,7 @@ const TeamSection = ({ team, teamIndex }) => {
             <motion.div
               initial={{ scaleY: 0, opacity: 0 }}
               animate={isInView ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
-              transition={{ delay: 0.6, duration: TRANSITION_CONFIG.verticalLine, ease: "easeOut" }}
+              transition={{ delay: 0.8, duration: TRANSITION_CONFIG.verticalLine, ease: "easeOut" }}
               className="w-0.5 h-16 mx-auto origin-top"
               style={{ background: `linear-gradient(to bottom, ${getGradientColors(team.color)})` }}
             />
@@ -368,7 +368,7 @@ const TeamSection = ({ team, teamIndex }) => {
               <motion.div
                 initial={{ scaleX: 0, opacity: 0 }}
                 animate={isInView ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
-                transition={{ delay: 0.9, duration: TRANSITION_CONFIG.horizontalLine, ease: "easeOut" }}
+                transition={{ delay: 1.0, duration: TRANSITION_CONFIG.horizontalLine, ease: "easeOut" }}
                 className="absolute inset-0 origin-center"
                 style={{ background: `linear-gradient(to right, transparent, ${getGradientColors(team.color)}, transparent)` }}
               />
@@ -380,11 +380,11 @@ const TeamSection = ({ team, teamIndex }) => {
                   <motion.div
                     initial={{ scaleY: 0, opacity: 0 }}
                     animate={isInView ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
-                    transition={{ delay: 1.2 + idx * TRANSITION_CONFIG.memberCardStagger, duration: 0.6, ease: "easeOut" }}
+                    transition={{ delay: 1.2 + idx * 0.35, duration: 0.9, ease: "easeOut" }}
                     className="w-0.5 h-16 origin-top"
                     style={{ background: `linear-gradient(to bottom, ${getGradientColors(team.color)})` }}
                   />
-                  <MemberCard member={member} color={team.color} delay={1.4 + idx * TRANSITION_CONFIG.memberCardStagger} isInView={isInView} />
+                  <MemberCard member={member} color={team.color} delay={1.4 + idx * 0.35} isInView={isInView} />
                 </div>
               ))}
             </div>
