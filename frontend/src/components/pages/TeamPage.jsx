@@ -178,7 +178,6 @@ const TeamPage = () => {
         { name: "Niranjan Muley", role: "Secretary", imageUrl: niranjanMuleyImage },
         { name: "Vaishnavi Rao", role: "Treasurer", imageUrl: vaishnaviRaoImage },
         { name: "Abhishek Kanade", role: "Treasurer", imageUrl: abhishekKanadeImage },
-        { name: "Neerada Dathan", role: "Treasurer", imageUrl: neeradaDathanImage },
       ],
     },
     {
@@ -203,6 +202,7 @@ const TeamPage = () => {
       members: [
         { name: "Tanishka Jagtap", role: "Event Coordinator", imageUrl: tanishkaJagtapImage },
         { name: "Zikra Jahagirdar", role: "Event Coordinator", imageUrl: zikraJahagirdarImage },
+        { name: "Neerada Dathan", role: "Event Coordinator", imageUrl: neeradaDathanImage },
         { name: "Vishwam Gorpade", role: "Event Coordinator", imageUrl: vishwamGorpadeImage },
       ],
     },
@@ -244,9 +244,11 @@ const TeamPage = () => {
       leader: { name: "Tejas Shinde", role: "Volunteer Coordinator", imageUrl: tejasShindeImage },
       members: [
         { name: "Krishna Singh", role: "Volunteer", imageUrl: krishnaSinghImage },
-        { name: "Prathamesh Jadhav", role: "Volunteer", imageUrl: prathameshJadhavImage },
+        { name: "Priyanshu Ravat", role: "Volunteer", imageUrl: prathameshJadhavImage },
         { name: "Munazza Deshmukh", role: "Volunteer", imageUrl: munazzaDeshmukhImage },
         { name: "Sakshi Bodke", role: "Volunteer", imageUrl: sakshiBodkeImage },
+        { name: "Gargi Shete", role: "Volunteer", imageUrl: gargiSheteImage },
+        { name: "Janhavi", role: "Volunteer", imageUrl: janhaviImage },
       ],
     },
   ];
