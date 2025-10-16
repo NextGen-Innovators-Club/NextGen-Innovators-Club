@@ -7,6 +7,7 @@ import Footer from "../Footer";
 // ===== Placeholder Image Imports for Every Team Member =====
 // --- Leadership & Administration ---
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import affanPathanImage from "frontend/src/assets/ProfileImages/AffanImage.jpg";
 import pradnyaJadhavImage from "../assets/pradnya_jadhav.jpg";
 import amrishaVashishthaImage from "../assets/amrisha_vashishtha.jpg";
@@ -15,6 +16,8 @@ import vaishnaviRaoImage from "../assets/vaishnavi_rao.jpg";
 import abhishekKanadeImage from "../assets/abhishek_kanade.jpg";
 import neeradaDathanImage from "../assets/neerada_dathan.jpg";
 =======
+=======
+>>>>>>> Stashed changes
 import affanPathanImage from "../../assets/ProfileImages/AffanImage.jpg";
 import pradnyaJadhavImage from "../../assets/ProfileImages/PradnyaImage.jpg"
 import amrishaVashishthaImage from "../../assets/ProfileImages/AmrishaImage.jpg";
@@ -23,6 +26,9 @@ import vaishnaviRaoImage from "../../assets/ProfileImages/AffanImage.jpg";
 import abhishekKanadeImage from "../../assets/ProfileImages/AbhishekKImage.jpg";
 import neeradaDathanImage from "../../assets/ProfileImages/AffanImage.jpg";
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 // --- Technical Team ---
