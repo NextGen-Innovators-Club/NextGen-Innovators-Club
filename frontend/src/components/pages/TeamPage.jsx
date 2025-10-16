@@ -1,7 +1,58 @@
 import React, { useMemo } from "react";
 import { motion, useInView } from "framer-motion";
-import Navbar from "../Navbar"; 
-import Footer from "../Footer"; 
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+
+// ===== Placeholder Image Imports for Every Team Member =====
+// --- Leadership & Administration ---
+import affanPathanImage from "../assets/affan_pathan.jpg";
+import pradnyaJadhavImage from "../assets/pradnya_jadhav.jpg";
+import amrishaVashishthaImage from "../assets/amrisha_vashishtha.jpg";
+import niranjanMuleyImage from "../assets/niranjan_muley.jpg";
+import vaishnaviRaoImage from "../assets/vaishnavi_rao.jpg";
+import abhishekKanadeImage from "../assets/abhishek_kanade.jpg";
+import neeradaDathanImage from "../assets/neerada_dathan.jpg";
+
+// --- Technical Team ---
+import ashrafPathanImage from "../assets/ashraf_pathan.jpg";
+import ayushSinghImage from "../assets/ayush_singh.jpg";
+import varunSahuImage from "../assets/varun_sahu.jpg";
+import aryaPatangeImage from "../assets/arya_patange.jpg";
+import anaghaChaudhariImage from "../assets/anagha_chaudhari.jpg";
+
+// --- Event Coordinators ---
+import divyanshGargundeImage from "../assets/divyansh_gargunde.jpg";
+import tanishkaJagtapImage from "../assets/tanishka_jagtap.jpg";
+import zikraJahagirdarImage from "../assets/zikra_jahagirdar.jpg";
+import vishwamGorpadeImage from "../assets/vishwam_gorpade.jpg";
+
+// --- Managerial Team ---
+import gauravVyasImage from "../assets/gaurav_vyas.jpg";
+import swaraliKandImage from "../assets/swarali_kand.jpg";
+import neelakshiKantImage from "../assets/neelakshi_kant.jpg";
+
+// --- Media & Publicity Team ---
+import abhishekPattirImage from "../assets/abhishek_pattir.jpg";
+import muditGuptaImage from "../assets/mudit_gupta.jpg";
+import rushikeshPawarImage from "../assets/rushikesh_pawar.jpg";
+import snehalJaybhayImage from "../assets/snehal_jaybhay.jpg";
+import manasiGopaleImage from "../assets/manasi_gopale.jpg";
+
+// --- Design Team ---
+import sayaliKurheImage from "../assets/sayali_kurhe.jpg";
+import pratikshaGhonsikarImage from "../assets/pratiksha_ghonsikar.jpg";
+
+// --- Documentation Team ---
+import srikaraJoshiImage from "../assets/srikara_joshi.jpg";
+import yogitaImage from "../assets/yogita.jpg";
+
+// --- Volunteers ---
+import tejasShindeImage from "../assets/tejas_shinde.jpg";
+import krishnaSinghImage from "../assets/krishna_singh.jpg";
+import prathameshJadhavImage from "../assets/prathamesh_jadhav.jpg";
+import munazzaDeshmukhImage from "../assets/munazza_deshmukh.jpg";
+import sakshiBodkeImage from "../assets/sakshi_bodke.jpg";
+
 
 const TRANSITION_CONFIG = {
   headerFadeIn: 1.2,
@@ -22,7 +73,7 @@ const AnimatedStars = () => {
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 4 + 1.5, 
+      size: Math.random() * 4 + 1.5,
       duration: Math.random() * 2 + 1.5,
       delay: Math.random() * 1.5,
     }));
@@ -62,7 +113,7 @@ const FloatingParticles = () => {
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 20 + 15, 
+      size: Math.random() * 20 + 15,
       duration: Math.random() * 9 + 5,
       delay: Math.random() * 2,
     }));
@@ -105,87 +156,89 @@ const TeamPage = () => {
     {
       name: "Leadership & Administration",
       color: "from-blue-600 to-indigo-600",
-      leader: { name: "Affan Pathan", role: "President" },
+      leader: { name: "Affan Pathan", role: "President", imageUrl: affanPathanImage },
       members: [
-        { name: "Pradnya Jadhav", role: "Vice President" },
-        { name: "Amrisha Vashishtha", role: "Vice President" },
-        { name: "Niranjan Muley", role: "Secretary" },
-        { name: "Vaishnavi Rao", role: "Treasurer" },
-        { name: "Abhishek Kanade", role: "Treasurer" },
-        { name: "Neerada Dathan", role: "Treasurer" },
+        { name: "Pradnya Jadhav", role: "Vice President", imageUrl: pradnyaJadhavImage },
+        { name: "Amrisha Vashishtha", role: "Vice President", imageUrl: amrishaVashishthaImage },
+        { name: "Niranjan Muley", role: "Secretary", imageUrl: niranjanMuleyImage },
+        { name: "Vaishnavi Rao", role: "Treasurer", imageUrl: vaishnaviRaoImage },
+        { name: "Abhishek Kanade", role: "Treasurer", imageUrl: abhishekKanadeImage },
+        { name: "Neerada Dathan", role: "Treasurer", imageUrl: neeradaDathanImage },
       ],
     },
     {
       name: "Technical Team",
       color: "from-purple-600 to-violet-600",
-      leader: { name: "Ashraf Pathan", role: "Technical Head" },
+      leader: {
+        name: "Ashraf Pathan",
+        role: "Technical Head",
+        imageUrl: ashrafPathanImage,
+      },
       members: [
-        { name: "Ayush Singh", role: "Technical Team" },
-        { name: "Varun Sahu", role: "Technical Team" },
-        { name: "Arya Patange", role: "Technical Team" },
-        { name: "Anagha Chaudhari", role: "Technical Team" },
+        { name: "Ayush Singh", role: "Technical Team", imageUrl: ayushSinghImage },
+        { name: "Varun Sahu", role: "Technical Team", imageUrl: varunSahuImage },
+        { name: "Arya Patange", role: "Technical Team", imageUrl: aryaPatangeImage },
+        { name: "Anagha Chaudhari", role: "Technical Team", imageUrl: anaghaChaudhariImage },
       ],
     },
     {
       name: "Event Coordinators",
       color: "from-emerald-600 to-teal-600",
-      leader: { name: "Divyansh Gargunde", role: "Event Coordinator Lead" },
+      leader: { name: "Divyansh Gargunde", role: "Event Coordinator Lead", imageUrl: divyanshGargundeImage },
       members: [
-        { name: "Tanishka Jagtap", role: "Event Coordinator" },
-        { name: "Zikra Jahagirdar", role: "Event Coordinator" },
-        { name: "Vishwam Gorpade", role: "Event Coordinator" },
+        { name: "Tanishka Jagtap", role: "Event Coordinator", imageUrl: tanishkaJagtapImage },
+        { name: "Zikra Jahagirdar", role: "Event Coordinator", imageUrl: zikraJahagirdarImage },
+        { name: "Vishwam Gorpade", role: "Event Coordinator", imageUrl: vishwamGorpadeImage },
       ],
     },
     {
       name: "Managerial Team",
       color: "from-orange-600 to-red-600",
-      leader: { name: "Gaurav Vyas", role: "Managerial Team Lead" },
+      leader: { name: "Gaurav Vyas", role: "Managerial Team Lead", imageUrl: gauravVyasImage },
       members: [
-        { name: "Swarali Kand", role: "Managerial Team" },
-        { name: "Neelakshi Kant", role: "Managerial Team" },
+        { name: "Swarali Kand", role: "Managerial Team", imageUrl: swaraliKandImage },
+        { name: "Neelakshi Kant", role: "Managerial Team", imageUrl: neelakshiKantImage },
       ],
     },
     {
       name: "Media & Publicity Team",
       color: "from-pink-600 to-rose-600",
-      leader: { name: "Abhishek Pattir", role: "Media & Publicity Head" },
+      leader: { name: "Abhishek Pattir", role: "Media & Publicity Head", imageUrl: abhishekPattirImage },
       members: [
-        { name: "Mudit Gupta", role: "Media & Publicity Team" },
-        { name: "Rushikesh Pawar", role: "Media & Publicity Team" },
-        { name: "Snehal Jaybhay", role: "Media & Publicity Team" },
-        { name: "Manasi Gopale", role: "Media & Publicity Team" },
+        { name: "Mudit Gupta", role: "Media & Publicity Team", imageUrl: muditGuptaImage },
+        { name: "Rushikesh Pawar", role: "Media & Publicity Team", imageUrl: rushikeshPawarImage },
+        { name: "Snehal Jaybhay", role: "Media & Publicity Team", imageUrl: snehalJaybhayImage },
+        { name: "Manasi Gopale", role: "Media & Publicity Team", imageUrl: manasiGopaleImage },
       ],
     },
     {
       name: "Design Team",
       color: "from-cyan-600 to-blue-600",
-      leader: { name: "Sayali Kurhe", role: "Design Team Lead" },
-      members: [{ name: "Pratiksha Ghonsikar", role: "Design Team" }],
+      leader: { name: "Sayali Kurhe", role: "Design Team Lead", imageUrl: sayaliKurheImage },
+      members: [{ name: "Pratiksha Ghonsikar", role: "Design Team", imageUrl: pratikshaGhonsikarImage }],
     },
     {
       name: "Documentation Team",
       color: "from-indigo-600 to-purple-600",
-      leader: { name: "Srikara Joshi", role: "Documentation Lead" },
-      members: [{ name: "Yogita", role: "Documentation" }],
+      leader: { name: "Srikara Joshi", role: "Documentation Lead", imageUrl: srikaraJoshiImage },
+      members: [{ name: "Yogita", role: "Documentation", imageUrl: yogitaImage }],
     },
     {
       name: "Volunteers",
       color: "from-teal-600 to-green-600",
-      leader: { name: "Tejas Shinde", role: "Volunteer Coordinator" },
+      leader: { name: "Tejas Shinde", role: "Volunteer Coordinator", imageUrl: tejasShindeImage },
       members: [
-        { name: "Krishna Singh", role: "Volunteer" },
-        { name: "Prathamesh Jadhav", role: "Volunteer" },
-        { name: "Munazza Deshmukh", role: "Volunteer" },
-        { name: "Sakshi Bodke", role: "Volunteer" },
+        { name: "Krishna Singh", role: "Volunteer", imageUrl: krishnaSinghImage },
+        { name: "Prathamesh Jadhav", role: "Volunteer", imageUrl: prathameshJadhavImage },
+        { name: "Munazza Deshmukh", role: "Volunteer", imageUrl: munazzaDeshmukhImage },
+        { name: "Sakshi Bodke", role: "Volunteer", imageUrl: sakshiBodkeImage },
       ],
     },
   ];
 
   return (
     <>
-    
       <Navbar />
-      
       <div className="min-h-screen relative overflow-hidden
         bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/40
         dark:bg-gradient-to-br dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20
@@ -292,7 +345,6 @@ const TeamPage = () => {
         </div>
       </div>
 
-      {/* ✅ ADD FOOTER */}
       <Footer />
     </>
   );
@@ -434,10 +486,14 @@ const LeaderCard = ({ leader, color, isInView }) => (
             className="relative mb-8"
           >
             <div className={`absolute -inset-2 bg-gradient-to-r ${color} rounded-3xl blur opacity-50`} />
-            <div className={`relative w-28 h-28 bg-gradient-to-br ${color} rounded-3xl flex items-center justify-center shadow-2xl ring-4 ring-white/50 dark:ring-gray-800/50`}>
-              <span className="text-white text-3xl font-bold tracking-tight">
-                {leader.name.split(" ").map((n) => n[0]).join("")}
-              </span>
+            <div className={`relative w-28 h-28 bg-gradient-to-br ${color} rounded-3xl flex items-center justify-center shadow-2xl ring-4 ring-white/50 dark:ring-gray-800/50 overflow-hidden`}>
+              {leader.imageUrl ? (
+                <img src={leader.imageUrl} alt={leader.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-white text-3xl font-bold tracking-tight">
+                  {leader.name.split(" ").map((n) => n[0]).join("")}
+                </span>
+              )}
             </div>
           </motion.div>
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
@@ -473,10 +529,14 @@ const MemberCard = ({ member, color, delay, isInView }) => (
           className="relative mb-5"
         >
           <div className={`absolute -inset-1 bg-gradient-to-r ${color} rounded-2xl blur opacity-40`} />
-          <div className={`relative w-20 h-20 bg-gradient-to-br ${color} rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-white/50 dark:ring-gray-800/50`}>
-            <span className="text-white text-xl font-bold">
-              {member.name.split(" ").map((n) => n[0]).join("")}
-            </span>
+          <div className={`relative w-20 h-20 bg-gradient-to-br ${color} rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-white/50 dark:ring-gray-800/50 overflow-hidden`}>
+            {member.imageUrl ? (
+              <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" />
+            ) : (
+              <span className="text-white text-xl font-bold">
+                {member.name.split(" ").map((n) => n[0]).join("")}
+              </span>
+            )}
           </div>
         </motion.div>
         
