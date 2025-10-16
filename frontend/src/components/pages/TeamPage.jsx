@@ -6,30 +6,14 @@ import Footer from "../Footer";
 
 // ===== Placeholder Image Imports for Every Team Member =====
 // --- Leadership & Administration ---
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import affanPathanImage from "frontend/src/assets/ProfileImages/AffanImage.jpg";
-import pradnyaJadhavImage from "../assets/pradnya_jadhav.jpg";
-import amrishaVashishthaImage from "../assets/amrisha_vashishtha.jpg";
-import niranjanMuleyImage from "../assets/niranjan_muley.jpg";
-import vaishnaviRaoImage from "../assets/vaishnavi_rao.jpg";
-import abhishekKanadeImage from "../assets/abhishek_kanade.jpg";
-import neeradaDathanImage from "../assets/neerada_dathan.jpg";
-=======
-=======
->>>>>>> Stashed changes
 import affanPathanImage from "../../assets/ProfileImages/AffanImage.jpg";
-import pradnyaJadhavImage from "../../assets/ProfileImages/PradnyaImage.jpg"
+import pradnyaJadhavImage from "../../assets/ProfileImages/PradnyaImage.jpg";
 import amrishaVashishthaImage from "../../assets/ProfileImages/AmrishaImage.jpg";
 import niranjanMuleyImage from "../../assets/ProfileImages/NiranjanImage.jpg";
-import vaishnaviRaoImage from "../../assets/ProfileImages/AffanImage.jpg";
+import vaishnaviRaoImage from "../../assets/ProfileImages/VaishnaviImage.jpg";
 import abhishekKanadeImage from "../../assets/ProfileImages/AbhishekKImage.jpg";
 import neeradaDathanImage from "../../assets/ProfileImages/AffanImage.jpg";
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 // --- Technical Team ---
 import ashrafPathanImage from "../../assets/ProfileImages/AshrafImage.jpg";
@@ -40,40 +24,40 @@ import varunSahuImage from "../../assets/ProfileImages/VarunImage.jpg";
 
 
 // --- Event Coordinators ---
-import divyanshGargundeImage from "../../assets/ProfileImages/AffanImage.jpg";
+import divyanshGargundeImage from "../../assets/ProfileImages/AshrafImage.jpg";
 import tanishkaJagtapImage from "../../assets/ProfileImages/TanishqaImage.jpg";
 import zikraJahagirdarImage from "../../assets/ProfileImages/ZikraImage.jpg";
-import vishwamGorpadeImage from "../../assets/ProfileImages/AffanImage.jpg";
+import vishwamGorpadeImage from "../../assets/ProfileImages/AshrafImage.jpg";
 
 
 // --- Managerial Team ---
-import gauravVyasImage from "../../assets/ProfileImages/AffanImage.jpg";
-import swaraliKandImage from "../../assets/ProfileImages/AffanImage.jpg";
-import neelakshiKantImage from "../../assets/ProfileImages/AffanImage.jpg";
+import gauravVyasImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import swaraliKandImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import neelakshiKantImage from "../../assets/ProfileImages/AshrafImage.jpg";
 
 
 // --- Media & Publicity Team ---
 import abhishekPattirImage from "../../assets/ProfileImages/AbhishekPImage.jpg";
 import muditGuptaImage from "../../assets/ProfileImages/MuditImage.jpg";
-import rushikeshPawarImage from "../../assets/ProfileImages/AffanImage.jpg";
+import rushikeshPawarImage from "../../assets/ProfileImages/AshrafImage.jpg";
 import snehalJaybhayImage from "../../assets/ProfileImages/SnehalImage.jpg";
-import manasiGopaleImage from "../../assets/ProfileImages/AffanImage.jpg";
+import manasiGopaleImage from "../../assets/ProfileImages/AshrafImage.jpg";
 
 
 // --- Design Team ---
 import sayaliKurheImage from "../../assets/ProfileImages/SayaliImage.jpg";
-import pratikshaGhonsikarImage from "../../assets/ProfileImages/AffanImage.jpg";
+import pratikshaGhonsikarImage from "../../assets/ProfileImages/AshrafImage.jpg";
 
 
 // --- Documentation Team ---
-import srikaraJoshiImage from "../../assets/ProfileImages/AffanImage.jpg";
-import yogitaImage from "../../assets/ProfileImages/AffanImage.jpg";
+import srikaraJoshiImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import yogitaImage from "../../assets/ProfileImages/AshrafImage.jpg";
 
 
 // --- Volunteers ---
 import tejasShindeImage from "../../assets/ProfileImages/TejasImage.jpg";
 import krishnaSinghImage from "../../assets/ProfileImages/KrishnaImage.jpg";
-import prathameshJadhavImage from "../../assets/ProfileImages/AffanImage.jpg";
+import prathameshJadhavImage from "../../assets/ProfileImages/AshrafImage.jpg";
 import munazzaDeshmukhImage from "../../assets/ProfileImages/MunazzaImage.jpg";
 import sakshiBodkeImage from "../../assets/ProfileImages/SakshiImage.jpg";
 
@@ -207,7 +191,7 @@ const TeamPage = () => {
       },
       members: [
         { name: "Ayush Singh", role: "Technical Team", imageUrl: ayushSinghImage },
-        { name: "Anagha Chaudhari", role: "Technical Team", imageUrl: anaghaChaudhariImage },
+        { name: "Anagha Chaudhari", role: "Technical Team", imageUrl: anaghaChaudhariImage },
         { name: "Arya Patange", role: "Technical Team", imageUrl: aryaPatangeImage },
         { name: "Varun Sahu", role: "Technical Team", imageUrl: varunSahuImage },
       ],
