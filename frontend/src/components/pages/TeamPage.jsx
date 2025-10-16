@@ -5,7 +5,7 @@ import Footer from "../Footer";
 
 // ===== Placeholder Image Imports for Every Team Member =====
 // --- Leadership & Administration ---
-import affanPathanImage from "../assets/affan_pathan.jpg";
+import affanPathanImage from "../assets/ProfileImages/AffanImage.jpg";
 import pradnyaJadhavImage from "../assets/pradnya_jadhav.jpg";
 import amrishaVashishthaImage from "../assets/amrisha_vashishtha.jpg";
 import niranjanMuleyImage from "../assets/niranjan_muley.jpg";
