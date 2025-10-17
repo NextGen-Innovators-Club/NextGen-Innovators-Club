@@ -4,6 +4,18 @@ import SectionWrapper from './SectionWrapper';
 
 const teamMembers = [
   { 
+    name: 'Dr. Sagar Pande', 
+    role: 'Head Of Department AI & DS', 
+    color: 'from-purple-600 to-violet-600',
+    description: 'Providing Guidance and industry expertise'
+  },
+  { 
+    name: 'Dr. Manisha Khadse', 
+    role: 'Faculty Mentor', 
+    color: 'from-rose-600 to-pink-600',
+    description: 'Providing academic guidance and industry expertise'
+  },
+  { 
     name: 'Affan Pathan', 
     role: 'President', 
     color: 'from-blue-600 to-indigo-600',
@@ -16,17 +28,12 @@ const teamMembers = [
     description: 'Supporting operations and fostering collaborative partnerships'
   },
   { 
-    name: 'Ashraf Pathan', 
-    role: 'Technical Head', 
-    color: 'from-purple-600 to-violet-600',
-    description: 'Overseeing technical projects and development initiatives'
+    name: 'Amrisha Vashishtha', 
+    role: 'Vice President', 
+    color: 'from-pink-600 to-teal-600',
+    description: 'Supporting operations and fostering collaborative partnerships'
   },
-  { 
-    name: 'Ms. Manisha Khadse', 
-    role: 'Faculty Mentor', 
-    color: 'from-rose-600 to-pink-600',
-    description: 'Providing academic guidance and industry expertise'
-  },
+  
 ];
 
 const Team = () => {
@@ -108,7 +115,7 @@ const Team = () => {
               transition={{ delay: 0.2, duration: 0.8, type: "spring", stiffness: 80 }}
               className="inline-block text-text-light-primary dark:text-text-dark-primary"
             >
-              Meet Our{' '}
+              Meet Our {' '}
             </motion.span>
             <motion.span 
               initial={{ opacity: 0, x: 40, rotateY: 15 }}
@@ -116,7 +123,7 @@ const Team = () => {
               transition={{ delay: 0.4, duration: 0.8, type: "spring", stiffness: 80 }}
               className="inline-block text-accent dark:text-accent-light"
             >
-              Team
+              Leaders
             </motion.span>
           </h2>
           
