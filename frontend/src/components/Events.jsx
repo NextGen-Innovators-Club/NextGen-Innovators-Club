@@ -209,7 +209,7 @@ const Events = () => {
                             transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                             className="text-2xl font-bold"
                           >
-                            06
+                            17
                           </motion.div>
                           <div className="text-xs opacity-90">OCT</div>
                         </div>
@@ -270,7 +270,7 @@ const Events = () => {
                     {
                       icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
                       title: "Date & Time",
-                      value: "Oct 6, 2025 • 2:00 PM"
+                      value: "Oct 17, 2025 • 9:30 AM - 11:30 AM"
                     },
                     {
                       icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
@@ -348,7 +348,7 @@ const Events = () => {
                     transition={{ delay: 1, duration: 0.6 }}
                     className="text-sm text-text-light-tertiary dark:text-text-dark-tertiary mt-3"
                   >
-                    Registration closes October 5th
+                    Registration closes October 17th
                   </motion.p>
                 </motion.div>
               </div>
