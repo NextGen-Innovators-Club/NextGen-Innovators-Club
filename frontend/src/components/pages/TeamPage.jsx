@@ -246,7 +246,7 @@ const TeamPage = () => {
       leader: { name: "Tejas Shinde", role: "Volunteer Coordinator", imageUrl: tejasShindeImage },
       members: [
         { name: "Krishna Singh", role: "Volunteer", imageUrl: krishnaSinghImage },
-        { name: "Priyanshu Ravat", role: "Volunteer", imageUrl: prathameshJadhavImage },
+        { name: "Priyanshu Ravat", role: "Volunteer", imageUrl: PriyanshuImage },
         { name: "Munazza Deshmukh", role: "Volunteer", imageUrl: munazzaDeshmukhImage },
         { name: "Sakshi Bodke", role: "Volunteer", imageUrl: sakshiBodkeImage },
         { name: "Gargi Shete", role: "Volunteer", imageUrl: gargiSheteImage },
