@@ -12,7 +12,7 @@ import amrishaVashishthaImage from "../../assets/ProfileImages/AmrishaImage.jpg"
 import niranjanMuleyImage from "../../assets/ProfileImages/NiranjanImage.jpg";
 import vaishnaviRaoImage from "../../assets/ProfileImages/VaishnaviImage.jpg";
 import abhishekKanadeImage from "../../assets/ProfileImages/AbhishekKImage.jpg";
-import neeradaDathanImage from "../../assets/ProfileImages/AffanImage.jpg";
+import neeradaDathanImage from "../../assets/ProfileImages/NeeradaDathanImage.jpg";
 
 
 // --- Technical Team ---
@@ -24,34 +24,34 @@ import varunSahuImage from "../../assets/ProfileImages/VarunImage.jpg";
 
 
 // --- Event Coordinators ---
-import divyanshGargundeImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import divyanshGargundeImage from "../../assets/ProfileImages/DivyanshGargudeImage.jpg";
 import tanishkaJagtapImage from "../../assets/ProfileImages/TanishqaImage.jpg";
 import zikraJahagirdarImage from "../../assets/ProfileImages/ZikraImage.jpg";
-import vishwamGorpadeImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import vishwamGorpadeImage from "../../assets/ProfileImages/VishwamImage.jpg";
 
 
 // --- Managerial Team ---
-import gauravVyasImage from "../../assets/ProfileImages/AshrafImage.jpg";
-import swaraliKandImage from "../../assets/ProfileImages/AshrafImage.jpg";
-import neelakshiKantImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import gauravVyasImage from "../../assets/ProfileImages/GauravVyasImage.jpg";
+import swaraliKandImage from "../../assets/ProfileImages/SwaraliImage.jpg";
+import neelakshiKantImage from "../../assets/ProfileImages/NeelakshiImage.jpg";
 
 
 // --- Media & Publicity Team ---
 import abhishekPattirImage from "../../assets/ProfileImages/AbhishekPImage.jpg";
 import muditGuptaImage from "../../assets/ProfileImages/MuditImage.jpg";
-import rushikeshPawarImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import rushikeshPawarImage from "../../assets/ProfileImages/RushikeshImage.jpg";
 import snehalJaybhayImage from "../../assets/ProfileImages/SnehalImage.jpg";
-import manasiGopaleImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import manasiGopaleImage from "../../assets/ProfileImages/ManasiImage.jpg";
 
 
 // --- Design Team ---
 import sayaliKurheImage from "../../assets/ProfileImages/SayaliImage.jpg";
-import pratikshaGhonsikarImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import pratikshaGhonsikarImage from "../../assets/ProfileImages/PratikshaImage.jpg";
 
 
 // --- Documentation Team ---
-import srikaraJoshiImage from "../../assets/ProfileImages/AshrafImage.jpg";
-import yogitaImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import srikaraJoshiImage from "../../assets/ProfileImages/SrikaraImage.jpg";
+import yogitaImage from "../../assets/ProfileImages/YogitaImage.jpg";
 
 
 // --- Volunteers ---
@@ -60,6 +60,8 @@ import krishnaSinghImage from "../../assets/ProfileImages/KrishnaImage.jpg";
 import prathameshJadhavImage from "../../assets/ProfileImages/AshrafImage.jpg";
 import munazzaDeshmukhImage from "../../assets/ProfileImages/MunazzaImage.jpg";
 import sakshiBodkeImage from "../../assets/ProfileImages/SakshiImage.jpg";
+import gargiSheteImage from "../../assets/ProfileImages/gargiSheteImage.jpg";
+import janhaviImage from "../../assets/ProfileImages/JanhaviImage.jpg";
 
 
 
@@ -178,6 +180,7 @@ const TeamPage = () => {
         { name: "Niranjan Muley", role: "Secretary", imageUrl: niranjanMuleyImage },
         { name: "Vaishnavi Rao", role: "Treasurer", imageUrl: vaishnaviRaoImage },
         { name: "Abhishek Kanade", role: "Treasurer", imageUrl: abhishekKanadeImage },
+        { name: "Neerada Dathan", role: "Treasurer", imageUrl: neeradaDathanImage },
       ],
     },
     {
@@ -202,7 +205,6 @@ const TeamPage = () => {
       members: [
         { name: "Tanishka Jagtap", role: "Event Coordinator", imageUrl: tanishkaJagtapImage },
         { name: "Zikra Jahagirdar", role: "Event Coordinator", imageUrl: zikraJahagirdarImage },
-        { name: "Neerada Dathan", role: "Event Coordinator", imageUrl: neeradaDathanImage },
         { name: "Vishwam Gorpade", role: "Event Coordinator", imageUrl: vishwamGorpadeImage },
       ],
     },
@@ -212,7 +214,7 @@ const TeamPage = () => {
       leader: { name: "Gaurav Vyas", role: "Managerial Team Lead", imageUrl: gauravVyasImage },
       members: [
         { name: "Swarali Kand", role: "Managerial Team", imageUrl: swaraliKandImage },
-        { name: "Neelakshi Kant", role: "Managerial Team", imageUrl: neelakshiKantImage },
+        { name: "Neelakshi Kutwal", role: "Managerial Team", imageUrl: neelakshiKantImage },
       ],
     },
     {
@@ -221,7 +223,7 @@ const TeamPage = () => {
       leader: { name: "Abhishek Pattir", role: "Media & Publicity Head", imageUrl: abhishekPattirImage },
       members: [
         { name: "Mudit Gupta", role: "Media & Publicity Team", imageUrl: muditGuptaImage },
-        { name: "Rushikesh Pawar", role: "Media & Publicity Team", imageUrl: rushikeshPawarImage },
+        { name: "Rushikesh Uttawar", role: "Media & Publicity Team", imageUrl: rushikeshPawarImage },
         { name: "Snehal Jaybhay", role: "Media & Publicity Team", imageUrl: snehalJaybhayImage },
         { name: "Manasi Gopale", role: "Media & Publicity Team", imageUrl: manasiGopaleImage },
       ],
