@@ -97,9 +97,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4"
         >
-          <span className="text-gray-900 dark:text-white">Nextgen </span>
+          <span className="text-gray-900 dark:text-white">NextGen </span>
           <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
-            Innovation
+            Innovators
           </span>
         </motion.h1>
 

@@ -88,7 +88,7 @@ const Navbar = () => {
               onClick={() => navigate('/')}
               className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all duration-300 cursor-pointer"
             >
-              Nextgen Innovation
+              NextGen Innovators
             </button>
           </div>
 

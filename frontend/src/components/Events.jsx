@@ -232,7 +232,7 @@ const Events = () => {
                         transition={{ delay: 0.7, duration: 0.8 }}
                         className="text-2xl md:text-3xl font-bold mb-2"
                       >
-                        Nextgen Innovation Club Launch
+                        NextGen Innovators Club Launch
                       </motion.h3>
                       <motion.p 
                         initial={{ opacity: 0, x: 30 }}

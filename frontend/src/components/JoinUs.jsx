@@ -156,7 +156,7 @@ const JoinUs = () => {
               transition={{ delay: 0.4, duration: 0.8, type: "spring", stiffness: 80 }}
               className="inline-block text-accent dark:text-accent-light"
             >
-              Innovation Journey
+               Innovation Journey
             </motion.span>
           </h2>
           
@@ -190,7 +190,7 @@ const JoinUs = () => {
               className="mb-8"
             >
               <h3 className="text-2xl md:text-3xl font-bold text-text-light-primary dark:text-text-dark-primary mb-4">
-                Why Join Nextgen Innovation?
+                Why Join NextGen Innovators Club?
               </h3>
               <motion.div 
                 initial={{ width: 0 }}

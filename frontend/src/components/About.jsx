@@ -106,7 +106,7 @@ const About = () => {
               transition={{ delay: 0.3, duration: 0.8, ease: "easeOut", type: "spring", stiffness: 80 }}
               className="inline-block text-gray-900 dark:text-white"
             >
-              Nextgen{' '}
+              NextGen{' '}
             </motion.span>
             <motion.span 
               initial={{ opacity: 0, x: 50, rotateY: 15 }}
@@ -114,7 +114,7 @@ const About = () => {
               transition={{ delay: 0.5, duration: 0.8, ease: "easeOut", type: "spring", stiffness: 80 }}
               className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Innovation
+              Innovators
             </motion.span>
           </h2>
           

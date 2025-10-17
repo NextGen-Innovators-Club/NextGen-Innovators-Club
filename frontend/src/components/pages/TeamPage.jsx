@@ -57,7 +57,7 @@ import yogitaImage from "../../assets/ProfileImages/YogitaImage.jpg";
 // --- Volunteers ---
 import tejasShindeImage from "../../assets/ProfileImages/TejasImage.jpg";
 import krishnaSinghImage from "../../assets/ProfileImages/KrishnaImage.jpg";
-import prathameshJadhavImage from "../../assets/ProfileImages/AshrafImage.jpg";
+import PriyanshuImage from "../../assets/ProfileImages/PriyanshuImage.jpg";
 import munazzaDeshmukhImage from "../../assets/ProfileImages/MunazzaImage.jpg";
 import sakshiBodkeImage from "../../assets/ProfileImages/SakshiImage.jpg";
 import gargiSheteImage from "../../assets/ProfileImages/gargiSheteImage.jpg";
